@@ -9,12 +9,12 @@ Table of Contents:
       1. [Input Embeddings](#4)
 
  
-<a name="1"></>
+<a name="1"></a>
 ## Introduction
 
 Transformers have been proven to handle the sequence to sequence tasks particularly in NLP. Transformers, developed in 2017 by Vaswani et al., have become the backbone for many state-of-the-art models. Previously, sequential tasks were based on recurrent or convolutional layers. Self-attention mechanism is the most important part of transformers, which can process input data (which will be converted to embeddings) in parallel which in turn, allows more efficient and more scalable models. 
 
-<a name="2"></>
+<a name="2"></b>
 ## Transformers architecture 
 
 At the core, transformers consists of two primary components: encoder and decoder (Fig. 1). Encoder helps the model understand the input in a sense of machine understanding, we can also think of the encoder as a translator that listens to some input and converts it into numbers that capture the important parts of the input. It processes the input data and extracts meaning from it and this meaning is represented by numbers in vectors called embeddings. On the other hand, decoder is in charge of generating the output. It takes the output of the encoder, which is the understanding of the input, and starts generating text token by token. The decoder takes the numbers produced by the encoder and converts them into words. This architecture allows for many tasks like translation, summarization, and image recognition. 
@@ -31,10 +31,10 @@ Both encoders and decoders are implemented through layers. Although transformer 
 
 Fig. 2: Encoder-decoder architecture 
 
-<a name="3"></>
+<a name="3"></c>
 ### Encoder 
 
-<a name="4"></>
+<a name="4"></d>
 #### Input Embeddings
 
 here
