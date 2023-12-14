@@ -1,5 +1,62 @@
 # Transformers
 
+This repo documents my understanding of Transformers. 
+
+Table of Contents:
+1. [Introduction](#1)
+2. [Transformers architecture](#2)
+   1. [Encoder](#3)
+      1. [Input Embeddings](#4)
+
+ 
+
+<a name="1"></
+## Introduction
+
+Transformers have been proven to handle the sequence to sequence tasks particularly in NLP. Transformers, developed in 2017 by Vaswani et al., have become the backbone for many state-of-the-art models. Previously, sequential tasks were based on recurrent or convolutional layers. Self-attention mechanism is the most important part of transformers, which can process input data (which will be converted to embeddings) in parallel which in turn, allows more efficient and more scalable models. 
+
+<a name="2"></
+## Transformers architecture 
+
+At the core, transformers consists of two primary components: encoder and decoder (Fig. 1). Encoder helps the model understand the input in a sense of machine understanding, we can also think of the encoder as a translator that listens to some input and converts it into numbers that capture the important parts of the input. It processes the input data and extracts meaning from it and this meaning is represented by numbers in vectors called embeddings. On the other hand, decoder is in charge of generating the output. It takes the output of the encoder, which is the understanding of the input, and starts generating text token by token. The decoder takes the numbers produced by the encoder and converts them into words. This architecture allows for many tasks like translation, summarization, and image recognition. 
+
+
+![](https://github.com/DanialArab/images/blob/main/Transformers/transformers%20architecture.png)
+
+Fig. 1: Transformers architecture
+
+Both encoders and decoders are implemented through layers. Although transformer architecture presented in the original paper consists of 6 layers in each encoder and decoder, modern transformers have different number of layers: for example, BERT (which is an encoder only model) has 12 and 24 layers in the small and large versions, respectively, the standard BART has 12 layers in each encoder and decoder, the original GPT has 12 decoder only layers while GPT-3 has 96 layers. The layers work in series like the output of one serves as the input of the next layer (Fig. 2). At the end of encoder, we have the encoder output, which goes to the decoder layer. 
+
+
+![](https://github.com/DanialArab/images/blob/main/Transformers/encoder-decoder.png)
+
+Fig. 2: Encoder-decoder architecture 
+
+<a name="3"></
+### Encoder 
+
+<a name="4"></
+#### Input Embeddings
+
+here
+
+References
+
+ <a href="https://mlbootcamp.ai/course.html?guid=d105240a-94e1-405b-be80-60056659c24c">The Transformers Layer by Layer</a>
+ 
+  
+
+
+
+
+
+
+
+
+
+
+### from before needs to be polished 
+
 + Attention is all you need 
   + BLEU (Bilingual Evaluation Understudy) is a metric used for evaluating the quality of machine-generated text, especially in the context of machine translation. It was proposed as a metric for automatic evaluation of machine translation output. BLEU compares a candidate translation (produced by a machine translation system) to one or more reference translations (human-generated translations) by computing a similarity score.
   + The dominant sequence transduction models are based on complex recurrent or convolutional neural networks that include an encoder and a decoder: In the context of the passage you provided, "sequence transduction" refers to the task of transforming one sequence of data into another sequence. This often occurs in the context of natural language processing (NLP) and machine translation.
@@ -72,8 +129,6 @@ In summary, a sequence-to-sequence task is a type of machine learning problem wh
 
   + Self-attention mechanism can process input data in parallel allowing for more efficient and scalable models
   + We use masking in the masked attention in the decoder to prevent future information leakage
-  + Encoder helps the model understand the input in the sense of machine understanding, we can also think of the encoder as a translator that listens to some input and converts it into numbers that capture the important part of the input, it processes the input data and extracts meaning from it, this meaning is represented by numbers in vectors called embeddings 
-  + decoder is in charge of generating the output, it takes the output of the encoder, which is the understanding of the input, and starts generating text token by token, decoder takes the numbers produced by the encoder and converts them into words
   + Input embeddings: each word in the input is converted into a token and each token is associated with a number called token id. ?????????
   + Positional encoding: Transformers do not process sequences step by step, instead transformers process the inputs all at once in parallel. So to retain the order of the sequence transformers use something called positional encoding, which is basically a number that is added to the input embeddings, the goal is to provide the model with information about the position of each individual word actually each individual token in the sequence
   + Positional encoding is fixed b/c it comes from a deterministic function, that uses cousin and sin, while positional embedding is adaptive and learned during training and it is flexible
