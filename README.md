@@ -35,6 +35,13 @@ Fig. 2: Encoder-decoder architecture
 <a name="3"></c>
 ### Encoder 
 
+ 
+A more detailed representation of the encoder and decoder is depicted in Fig. 3.
+
+![](https://github.com/DanialArab/images/blob/main/Transformers/tokenization.png)
+
+Fig. 3: More detailed depiction of encoder and decore in transformers 
+
 <a name="4"></d>
 #### Input Embeddings
 
@@ -42,18 +49,21 @@ The first step in the encoder path is to convert the words into numbers. The wor
 
 
 ![](https://github.com/DanialArab/images/blob/main/Transformers/tokenization.png)
+
 Fig. 4: Words tokenization 
 
 Tokenozers are the bridge between humans and computers at the very basic level. Tokenizers just convert the words into numbers. So words are first converted into tokens and each token is associated with a number called a token ID (Fig. 5). 
 
 
 ![](https://github.com/DanialArab/images/blob/main/Transformers/tokenizer.png)
+
 Fig. 5: Words first are converted into tokens which are associated numbers called token ID
 
 This token ID usually goes from zero to the number of tokens that the model can handle. In the example shown in Fig. 4, the tokenizer takes each of the words and converts them into tokens. In this simple example, we assume each word is a token, which is not exact: the relationship between tokens and words can vary depending on the language and the specific content. As a rough estimate, 1000 tokens often correspond to around 700 words in English. This is just a general approximation, and the actual word count may vary based on factors such as sentence structure, vocabulary, and writing style. We have special tokens in the above example: one at the beginning and one at the end. Each one of these tokens is mapped with a number. So the words that are understandable to humans are now converted into some numbers that are understandable to machines. Each token ID is in turn associated with a vector called embedding. The set of vectors of all tokens is called the word embedding matrix, as shown in Fig. 6.
 
 
 ![](https://github.com/DanialArab/images/blob/main/Transformers/word%20embedding%20matrix.png)
+
 Fig. 6: Word embedding matrix 
 
 The word embeddings matrix, which is learned during the training of a transformer, has learned what each token means/represents. This matrix now contains the meaning of each word or each token. In any language, words carry context, sentiment, and syntax. Word embeddings encapsulate these attributes enabling algorithms to discern the relationships and meaning among words. From this perspective, word embeddings are almost at least one main repository of the knowledge of transformers. So every transformer has a word embedding. 
