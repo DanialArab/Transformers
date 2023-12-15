@@ -7,6 +7,7 @@ Table of Contents:
 2. [Transformers architecture](#2)
    1. [Encoder](#3)
       1. [Input Embeddings](#4)
+      2. [Positional encoding ](#5)
 
  
 <a name="1"></a>
@@ -37,7 +38,39 @@ Fig. 2: Encoder-decoder architecture
 <a name="4"></d>
 #### Input Embeddings
 
+The first step in the encoder path is to convert the words into numbers. The words are first tokenized, i.e., each word is either totally or partially matched with a token, as shown in Fig. 4.
+
+
+![](https://github.com/DanialArab/images/blob/main/Transformers/tokenization.png)
+Fig. 4: Words tokenization 
+
+Tokenozers are the bridge between humans and computers at the very basic level. Tokenizers just convert the words into numbers. So words are first converted into tokens and each token is associated with a number called a token ID (Fig. 5). 
+
+
+![](https://github.com/DanialArab/images/blob/main/Transformers/tokenizer.png)
+Fig. 5: Words first are converted into tokens which are associated numbers called token ID
+
+This token ID usually goes from zero to the number of tokens that the model can handle. In the example shown in Fig. 4, the tokenizer takes each of the words and converts them into tokens. In this simple example, we assume each word is a token, which is not exact: the relationship between tokens and words can vary depending on the language and the specific content. As a rough estimate, 1000 tokens often correspond to around 700 words in English. This is just a general approximation, and the actual word count may vary based on factors such as sentence structure, vocabulary, and writing style. We have special tokens in the above example: one at the beginning and one at the end. Each one of these tokens is mapped with a number. So the words that are understandable to humans are now converted into some numbers that are understandable to machines. Each token ID is in turn associated with a vector called embedding. The set of vectors of all tokens is called the word embedding matrix, as shown in Fig. 6.
+
+
+![](https://github.com/DanialArab/images/blob/main/Transformers/word%20embedding%20matrix.png)
+Fig. 6: Word embedding matrix 
+
+The word embeddings matrix, which is learned during the training of a transformer, has learned what each token means/represents. This matrix now contains the meaning of each word or each token. In any language, words carry context, sentiment, and syntax. Word embeddings encapsulate these attributes enabling algorithms to discern the relationships and meaning among words. From this perspective, word embeddings are almost at least one main repository of the knowledge of transformers. So every transformer has a word embedding. 
+
+The word embeddings are like the look-up tables. Once we have matched each one of the token IDs with their vectors we now have vectors that represent each token of the input, which is called an input embedding (Fig. 6). 
+
+
+![](https://github.com/DanialArab/images/blob/main/Transformers/vectorized%20lookup%20tables.png)
+Fig. 7: Word embeddings are like the look-up tables
+
+Embeddings in transformers are learned during training and they capture the nuances of the language as per the training objective. In transformers, the embedding layer is a look-up table that translates token IDs to their corresponding vectors, which is a very powerful look-up table. 
+
+<a name="5"></d>
+#### Positional encoding 
+
 here
+
 
 References
 
@@ -128,7 +161,6 @@ In summary, a sequence-to-sequence task is a type of machine learning problem wh
 
   + Self-attention mechanism can process input data in parallel allowing for more efficient and scalable models
   + We use masking in the masked attention in the decoder to prevent future information leakage
-  + Input embeddings: each word in the input is converted into a token and each token is associated with a number called token id. ?????????
   + Positional encoding: Transformers do not process sequences step by step, instead transformers process the inputs all at once in parallel. So to retain the order of the sequence transformers use something called positional encoding, which is basically a number that is added to the input embeddings, the goal is to provide the model with information about the position of each individual word actually each individual token in the sequence
   + Positional encoding is fixed b/c it comes from a deterministic function, that uses cousin and sin, while positional embedding is adaptive and learned during training and it is flexible
   + The Attention Mechanism: we have a self-attention module in the encoder and we have two: a masked attention module and another attention module, called the cross-attention module, in the decoder.
