@@ -7,9 +7,12 @@ Table of Contents:
 2. [Transformers architecture](#2)
    1. [Encoder](#3)
       1. [Input Embeddings](#4)
-      2. [Positional encoding ](#5)
+      2. [Positional information](#5)
+         1. [Positional encoding](#6)
+         2. [Positional embedding](#7)
+         3. [Positional encoding vs. positional embedding](#8)
+      3. [The attention mechanism](#9)
 
- 
 <a name="1"></a>
 ## Introduction
 
@@ -72,12 +75,55 @@ The word embeddings are like the look-up tables. Once we have matched each one o
 
 
 ![](https://github.com/DanialArab/images/blob/main/Transformers/vectorized%20lookup%20tables.png)
+
 Fig. 7: Word embeddings are like the look-up tables
 
 Embeddings in transformers are learned during training and they capture the nuances of the language as per the training objective. In transformers, the embedding layer is a look-up table that translates token IDs to their corresponding vectors, which is a very powerful look-up table. 
 
 <a name="5"></d>
-#### Positional encoding 
+#### Positional information
+
+Previous models like RNNs and LSTMs process sequences word by word, which helps the model to keep the order of the words in a sentence. However, transformers do not process the sequential information step by step and instead, they handle elements of a sequence all at once in parallel. To maintain the order of words in a sequence, transformers need to track the positional information. This is achieved by adding a unique number to each input embedding (the positional encodings have the same dimension as the input embeddings so that the two can be summed) (Fig. 8). 
+
+![](https://github.com/DanialArab/images/blob/main/Transformers/positional%20embedding.png)
+
+Fig. 8: Simplified diagram depicting positional encoding 
+
+There are two approaches to retain this positional information:
+
++ Positional encoding, which was utilized in the original paper
++ Positional embedding, which was utilized in the more modern architectures 
+
+The objective is to provide the model with information about the position of each individual token in the sequence. This positional information is crucial for the model to understand the sequence order when processing input embeddings. 
+
+<a name="6"></d>
+##### Positional encoding 
+
+The original transformer used a mathematical function involving sines and cosines to perform positional encoding:
+
+![](https://github.com/DanialArab/images/blob/main/Transformers/positional%20encoding%20original%20formula.png)
+
+Fig. 9: Sine and cosine functions suggested in the original paper to perform positional encoding
+
+where pos is the position and i is the dimension. Each position of the positional encoding corresponds to a sinusoid. The wavelengths form a geometric progression from 2π to 10000 X 2π. The positional encoding visualization is depicted in the Positional encoding visualizer application. 
+
+<a name="7"></d>
+##### Positional embedding 
+
+In this approach the positional information is learned during training, offering adaptability and flexibility. Most modern transformers use positional embeddings. 
+
+Positional encoding vs. positional embedding 
+
+![](https://github.com/DanialArab/images/blob/main/Transformers/table.png)
+
+Afterward, we add the positional encoding to the input embeddings to get the embedding matrix, as shown in Fig. 10.
+
+![](https://github.com/DanialArab/images/blob/main/Transformers/input%20emdebbings%20plus%20positional%20encoding.png)
+
+Fig. 10: Positional encoding + input embeddings = embedding matrix
+
+<a name="8"></d>
+#### The attention mechanism
 
 here
 
@@ -171,8 +217,7 @@ In summary, a sequence-to-sequence task is a type of machine learning problem wh
 
   + Self-attention mechanism can process input data in parallel allowing for more efficient and scalable models
   + We use masking in the masked attention in the decoder to prevent future information leakage
-  + Positional encoding: Transformers do not process sequences step by step, instead transformers process the inputs all at once in parallel. So to retain the order of the sequence transformers use something called positional encoding, which is basically a number that is added to the input embeddings, the goal is to provide the model with information about the position of each individual word actually each individual token in the sequence
-  + Positional encoding is fixed b/c it comes from a deterministic function, that uses cousin and sin, while positional embedding is adaptive and learned during training and it is flexible
+ 
   + The Attention Mechanism: we have a self-attention module in the encoder and we have two: a masked attention module and another attention module, called the cross-attention module, in the decoder.
   + attention mechanism is called the heart or brain of the transformers. self-attention allows the model to weight the importance of different words in a sentence. more to lean!!!!
   +  
