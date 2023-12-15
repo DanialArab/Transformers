@@ -16,7 +16,7 @@ Table of Contents:
 <a name="1"></a>
 ## Introduction
 
-Transformers have been proven to handle the sequence to sequence tasks particularly in NLP. Transformers, developed in 2017 by Vaswani et al., have become the backbone for many state-of-the-art models. Previously, sequential tasks were based on recurrent or convolutional layers. Self-attention mechanism is the most important part of transformers, which can process input data (which will be converted to embeddings) in parallel which in turn, allows more efficient and more scalable models. 
+Transformers have been proven to handle the sequence to sequence tasks particularly in NLP. Transformers, developed in 2017 by <a href="https://arxiv.org/abs/1706.03762">Vaswani et al.</a>, have become the backbone for many state-of-the-art models. Previously, sequential tasks were based on recurrent or convolutional layers. Self-attention mechanism is the most important part of transformers, which can process input data (which will be converted to embeddings) in parallel which in turn, allows more efficient and more scalable models. 
 
 <a name="2"></b>
 ## Transformers architecture 
@@ -37,7 +37,6 @@ Fig. 2: Encoder-decoder architecture
 
 <a name="3"></c>
 ### Encoder 
-
  
 A more detailed representation of the encoder and decoder is depicted in Fig. 3.
 
@@ -105,7 +104,7 @@ The original transformer used a mathematical function involving sines and cosine
 
 Fig. 9: Sine and cosine functions suggested in the original paper to perform positional encoding
 
-where pos is the position and i is the dimension. Each position of the positional encoding corresponds to a sinusoid. The wavelengths form a geometric progression from 2π to 10000 X 2π. The positional encoding visualization is depicted in the Positional encoding visualizer application. 
+where pos is the position and i is the dimension. Each position of the positional encoding corresponds to a sinusoid. The wavelengths form a geometric progression from 2π to 10000 X 2π. The positional encoding visualization is depicted in the <a href="https://erdem.pl/2021/05/understanding-positional-encoding-in-transformers#positional-encoding-visualization">Positional encoding visualizer application</a>. 
 
 <a name="7"></d>
 ##### Positional embedding 
