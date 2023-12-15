@@ -112,7 +112,8 @@ where pos is the position and i is the dimension. Each position of the positiona
 
 In this approach the positional information is learned during training, offering adaptability and flexibility. Most modern transformers use positional embeddings. 
 
-Positional encoding vs. positional embedding 
+<a name="8"></d>
+##### Positional encoding vs. positional embedding 
 
 ![](https://github.com/DanialArab/images/blob/main/Transformers/table.png)
 
@@ -122,7 +123,7 @@ Afterward, we add the positional encoding to the input embeddings to get the emb
 
 Fig. 10: Positional encoding + input embeddings = embedding matrix
 
-<a name="8"></d>
+<a name="9"></d>
 #### The attention mechanism
 
 here
