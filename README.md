@@ -38,7 +38,7 @@ Fig. 2: Encoder-decoder architecture
  
 A more detailed representation of the encoder and decoder is depicted in Fig. 3.
 
-![](https://github.com/DanialArab/images/blob/main/Transformers/transformers%20architecture%20detailed.pn)
+![](https://github.com/DanialArab/images/blob/main/Transformers/transformers%20architecture%20detailed.png)
 
 Fig. 3: More detailed depiction of encoder and decore in transformers 
 
