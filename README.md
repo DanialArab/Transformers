@@ -16,7 +16,7 @@ Table of Contents:
 <a name="1"></a>
 ## Introduction
 
-Transformers have been proven to handle sequence-to-sequence tasks, particularly in NLP. Transformers, developed in 2017 by <a href="https://arxiv.org/abs/1706.03762">Vaswani et al.</a>, have become the backbone for many state-of-the-art models. Transformers are not just for NLP but also computer vision and computational biology. Transformers borrowed the transfer learning technique from computer vision, which allows us to use the weights from one task and apply them to a different but similar task for state-of-the-art performance. In computer vision, transformers do a great job by combining image and text representation to generate amazing art based solely on a single text description (like <a href="https://openai.com/dall-e-2">DALL-E2</a>). 
+Transformers have been proven to handle sequence-to-sequence tasks, particularly in NLP. Transformers, developed in 2017 by <a href="https://arxiv.org/abs/1706.03762">Vaswani et al.</a>, have become the backbone for many state-of-the-art models. Transformers are not just for NLP but also computer vision and computational biology. Transformers borrowed the transfer learning technique from computer vision, which allows us to use the weights from one task and apply them to a different but similar task for state-of-the-art performance. In computer vision, transformers do a great job by combining image and text representation to generate amazing art solely based on a single text description (like <a href="https://openai.com/dall-e-2">DALL-E2</a>). 
 
 Transformers are very efficient for tasks such as translation, question-answering, and generating human-level text. Previously, sequential tasks were based on recurrent or convolutional layers. Self-attention mechanism is the most important part of transformers, which can process input data (which will be converted to embeddings) in parallel which in turn, allows more efficient and more scalable models. 
 
@@ -228,6 +228,10 @@ In summary, a sequence-to-sequence task is a type of machine learning problem wh
 
 
 References:
+
+https://www.udemy.com/course/data-science-transformers-nlp/
+
+https://github.com/lazyprogrammer/machine_learning_examples/tree/master/transformers
 
 https://mlbootcamp.ai/course.html?guid=d105240a-94e1-405b-be80-60056659c24c
 
