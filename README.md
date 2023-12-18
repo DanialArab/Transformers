@@ -229,3 +229,5 @@ References:
 https://mlbootcamp.ai/course.html?guid=d105240a-94e1-405b-be80-60056659c24c
 
 https://www.youtube.com/watch?v=TQQlZhbC5ps
+
+https://www.linkedin.com/posts/armand-ruiz_the-paper-that-changed-everything-in-ai-activity-7134149759048577024-n_Q6?utm_source=share&utm_medium=member_android
