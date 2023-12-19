@@ -28,7 +28,9 @@ Transformers are very efficient for tasks such as translation, question-answerin
    + Longer range than LSTM, a type of RNNs
    + Attention was created for RNNs, but transformers use attention only, while doing away with the recurrent part 
 + Transformers are big and slow
-   + but computations can be done in parallel (unlike RNNs)
+   + but computations can be done in parallel (unlike RNNs where every output must be computed sequentially)
++ The important drawback of RNNs is the concept of vanishing gradient, LSTMs and GRUs are meant to mitigate this problem though (but only work up to a certain point). Vanishing gradient is not a concern in transformers since even for very long sequences, every input is directly connected to every output. 
++ The downside of transformers is that the attention mechanism is inherently quadratic meaning for input/output of length n we have O(n2) attention weights
 
 <a name="2"></b>
 ## Transformers architecture 
