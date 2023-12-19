@@ -4,7 +4,8 @@ This repo documents my understanding of Transformers.
 
 Table of Contents:
 1. [Introduction](#1)
-2. [Transformers architecture](#2)
+   1. [Transformers vs. RNNs](#2)
+3. [Transformers architecture](#2)
    1. [Encoder](#3)
       1. [Input Embeddings](#4)
       2. [Positional information](#5)
@@ -20,6 +21,14 @@ Transformers have been proven to handle sequence-to-sequence tasks, particularly
 
 Transformers are very efficient for tasks such as translation, question-answering, and generating human-level text. Previously, sequential tasks were based on recurrent or convolutional layers. Self-attention mechanism is the most important part of transformers, which can process input data (which will be converted to embeddings) in parallel which in turn, allows more efficient and more scalable models. 
 
+<a name="2"></a>
+### Transformers vs. RNNs
+
++ The attention mechanism allows NNs to learn very long-range dependencies in sequences
+   + Longer range than LSTM, a type of RNNs
+   + Attention was created for RNNs, but transformers use attention only, while doing away with the recurrent part 
++ Transformers are big and slow
+   + but computations can be done in parallel (unlike RNNs)
 
 <a name="2"></b>
 ## Transformers architecture 
